@@ -1,0 +1,2 @@
+<!--pages/course/watch/watch.wxml-->
+<web-view src="{{videoSrc}}"></web-view>

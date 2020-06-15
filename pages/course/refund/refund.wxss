@@ -1,0 +1,177 @@
+/* pages/course/refund/refund.wxss */
+.refund_padding{
+  padding: 0 31rpx;
+}
+.refund_item{
+   border-bottom: 10rpx solid #F6F7F7
+}
+.refund_itemdet{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30rpx; 
+ 
+}
+.refund_item .refund_text{
+  font-size:26rpx;
+  color:rgba(11,11,11,1);
+  line-height: 89rpx;
+}
+.refundReason .right{
+  font-size:24rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(155,151,151,1);
+  display: flex;
+  align-items: center
+}
+.refundReason .right text{
+  margin-right: 14rpx;
+}
+.refund_item .refund_item_img{
+  width:276rpx;
+  height:153rpx;
+  margin-right: 23rpx;
+  background-color: yellow
+}
+.refund_item .refund_item_right{
+    flex-grow: 1;
+}
+.refund_item .refund_item_top{
+    font-size:26rpx;
+    font-family:MicrosoftYaHei;
+    color:rgba(44,44,44,1);
+    display: flex;
+    justify-content: space-between;
+}
+.refund_item_top text{
+  display: inline-block;
+  max-width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.refund_item .refund_item_price{
+  font-size:28rpx;
+  color:rgba(230,83,83,1);
+}
+.refund_item .refund_item_bottom{
+  font-size:24rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(155,151,151,1);
+  margin-top: 90rpx;
+}
+.refundReason{
+  padding-top: 51rpx;
+}
+.refundReason>view{ 
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(78,78,78,1);
+  display: flex;
+  justify-content: space-between;
+  line-height: 95rpx;
+  border-top: 1px solid #E5E5E5;
+}
+.icon{
+  width: 13rpx;
+  height: 23rpx;
+}
+.tuikuan{
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(78,78,78,1);
+}
+.tuikuan>view{
+   line-height: 97rpx;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+.tuikuan .color{
+  color: #E65353;
+  font-size:26rpx;
+}
+.tuikuan input{
+  flex-grow: 1;
+}
+.tuikuan>view:first-child{
+  border-top: 10rpx solid #F6F7F7;
+}
+.tuikuan>view{
+  border-bottom: 10rpx solid #F6F7F7;
+}
+.Agree{
+  display: flex;
+  font-size:10px;
+  font-family:MicrosoftYaHei;
+  color:rgba(155,151,151,1);
+  line-height: 86rpx;
+}
+.Agree view text{
+  color: #3678D4
+}
+.voucher{
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(78,78,78,1);
+  line-height: 101rpx;
+}
+.voucherbox{
+  width: 120rpx;
+  height: 120rpx;
+  border: 1px dashed rgba(138,138,138,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.voucherbox>view{
+  text-align:center
+}
+.voucherbox_img{
+  width:43rpx;
+  height:39rpx;
+}
+.voucherbox_text{
+  font-size:20rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(155,151,151,1);  
+}
+
+.but_list{
+  line-height: 84rpx;
+  display: flex;
+  justify-content: space-between;
+
+}
+.but_list view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  color:rgba(255,255,255,1);
+}
+.but_list view:first-child{
+  color: #9B9797;
+  background-color: #FFFFFF;
+}
+.but_list view:last-child{
+  color: white;
+  background-color: #3678D4;
+}
+.images{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 10rpx;
+}
+.imgbox{
+  display: flex;
+  justify-content: flex-start;
+}
+page{
+  background-color: #fcfcfc;
+}
+.Agree checkbox{
+  transform: scale(0.6)
+}

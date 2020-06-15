@@ -1,0 +1,212 @@
+/* pages/course/view/view.wxss */
+@import "/libs/wxParse/wxParse.wxss";
+.banner image{
+  width: 750rpx;
+  height: 400rpx;
+}
+.section{
+  padding: 27rpx 41rpx 16rpx;
+  border-bottom: 10rpx solid #F6F7F7; 
+  display: flex;
+  justify-content: space-between;
+}
+.section .left{
+    flex-grow: 1;
+    max-width: 475rpx;
+}
+.section .right{
+  text-align: center;
+  padding-left: 60rpx;
+  flex-grow: 1;
+}
+.section .left .name{
+  display: inline-block;
+  font-size:14px;
+  font-family:PingFang-SC-Regular;
+  color:rgba(123,125,125,1);
+  line-height:30rpx;
+  width: 430rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.signup{
+  font-size:14px;
+  font-family:PingFang-SC-Regular;
+  color:rgba(167,168,168,1);
+  line-height:30rpx;
+}
+.Collection{
+  font-size:14px;
+  font-family:PingFang-SC-Regular;
+  color:rgba(167,168,168,1);
+  line-height:30rpx;
+ 
+}
+.bottombox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx
+}
+.Money{
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  color:rgba(255,0,0,1);
+  line-height:30rpx;
+}
+.but{
+  font-size:12px;
+  font-family:PingFang-SC-Regular;
+  color:rgba(255,255,255,1);
+  line-height:30rpx;
+  padding: 14rpx 18rpx;
+  background-color:rgba(54,120,212,1);
+  border-radius:6rpx;
+  min-width: 100rpx;
+  text-align: center
+}
+.newlist{
+  padding: 0 41rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(229,229,229,0.5)
+}
+.newlist view{
+  padding: 47rpx 13rpx 23rpx;
+  font-size: 14px;
+  font-family:PingFang-SC-Regular;
+  color:rgba(88,88,88,1);
+  line-height:30rpx;
+}
+.newlist .on{
+  color: #3678D4;
+  border-bottom: 4rpx solid rgba(54,120,212,1);
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+.content{
+  padding: 24rpx 41rpx 0;
+  font-size:24rpx;
+}
+.mulucont{
+  border-bottom: 1px solid rgba(210,210,210,1);
+  padding: 0 41rpx;
+  font-size:24rpx;
+
+}
+.chapter{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-family:PingFang-SC-Regular;
+  color:rgba(88,88,88,1);
+  line-height:30rpx;
+  padding: 25rpx 0 23rpx;
+  width: 670rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  align-items: center
+}
+.Classhour{
+  padding-left: 44rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    margin-bottom: 6rpx;
+}
+.maxcondetn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chaptername{
+  display: flex;
+  font-size: 12px;
+  color:rgba(129,131,132,1);
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Price{
+  font-size: 18rpx;
+  color:rgba(255,64,0,1);
+  margin-right: 23rpx
+}
+.maxcondetn .but {
+  background: #FF4000;
+  color: white;
+  border-radius:2rpx;
+}
+.maxcondetn .butNot{
+  background: rgb(218, 215, 215);
+}
+.score{
+  font-size:24rpx;
+  padding-bottom: 21rpx;
+  color:rgba(122,122,122,1);
+}
+.content .xin{
+  font-size:24rpx;
+  color:rgba(252,172,0,1);
+  display: flex;
+}
+.Plist{
+  
+}
+.Pitem{
+  padding: 28rpx 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+.Pitem image{
+  width: 71rpx;
+  height: 71rpx;
+  float: left;
+  padding-right: 17rpx
+}
+.PitemTop{
+  font-size: 12px;
+  color:rgba(88,88,88,1);
+  display: flex;
+  justify-content: space-between;
+}
+.PitemTop .time{
+  font-size:12px;
+  color:rgba(167,168,168,1);
+}
+.PitemBottom{
+  font-size:20rpx;
+  padding-top: 10rpx;
+  color:rgba(122,122,122,1);  
+}
+.view_coll{
+  width: 23rpx;
+  height: 21rpx;
+  margin-right: 21rpx;
+  transform: translateY(-4rpx)
+}
+.openimg{
+  width: 21rpx;
+  height: 13rpx;
+}
+.lockimg{
+  width: 25rpx;
+  height: 25rpx;
+}
+.scoreimg{
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 6rpx
+}
+.scoreimg:first-child{
+  margin-left: 18rpx;
+}
+.priAndBut{
+  display: flex;
+  align-items: center;
+}

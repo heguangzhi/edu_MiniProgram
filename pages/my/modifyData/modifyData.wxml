@@ -1,0 +1,37 @@
+<!--pages/my/modifyData/modifyData.wxml-->
+<view class="modifyData">
+  <!-- <view bindtap='useHeadImg' class='myHeadImg'>
+    <text>我的头像</text>
+    <image src='../../../images/icon/more.png' class='icon'></image>
+  </view> -->
+  <view class='myName'>
+    <view>昵称</view>
+    <view> <input value='{{userInfo.uname}}' bindinput='watchUname'></input> </view>
+  </view>
+  <view class='myGender'>
+    <view>性别</view>
+    <view>
+      <radio-group bindchange="radioChange">
+        <label><radio checked="{{userInfo.sex == 1 ? true:false}}" value='1'></radio>男</label>
+        <label><radio checked="{{userInfo.sex == 2 ? true:false}}" value='2'></radio>女</label>
+      </radio-group>
+    </view>
+  </view>
+  <view class='myAdd'>
+    <view>地区</view>
+    <view class='flex_groud'>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+      </picker>
+    </view>
+    <image src='/images/icon/more.png' class='icon'></image>
+  </view>
+  <view class='myinfo'>
+    <view>简介</view>
+    <view>
+      <input value='{{userInfo.intro?userInfo.intro:"想要的东西很贵，想去的地方很远"}}' bindinput='watchIntro'></input>
+    </view>
+  </view>
+  <view class='but' bindtap='submit'>完成</view>
+</view>
+

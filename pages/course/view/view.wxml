@@ -1,0 +1,140 @@
+<!--pages/course/view/view.wxml-->
+<import src="/libs/wxParse/wxParse.wxml"/>
+<view class='banner'>
+  <image src='{{course.cover}}'></image>
+</view>
+<view class='section'>
+  <view class='left'>
+    <text class='name'>{{course.video_title}}</text>
+    <view class='bottombox'>
+      <text class='signup'>{{course.video_order_count_mark}}人已报名</text>
+      <view bindtap='isScore' data-isScore="{{score}}" class='Collection'>
+        <image class='view_coll' data-isScore="{{score}}" src='{{score? "/images/icon/coll_on.png" : "/images/icon/score.png"}}'></image>
+        <text data-isScore="{{score}}">{{course.video_collect_count}}人已收藏</text>
+      </view>
+    </view>
+  </view>
+  <view class='right' wx:if="{{ios}}">
+    <view wx:if="{{course.isBuy == 1 || course.is_buy == 1 || course.price == 0}}">
+      <view wx:if="{{firstChildId}}">
+        <navigator url='/pages/course/watch/watch?vid={{id}}&id={{firstChildId}}'>
+          <view class='but'>学习</view>
+        </navigator>
+      </view>
+      <view wx:else>
+        <view class='but' bindtap='noCourseHour'>学习</view>
+      </view>
+    </view>
+    <view wx:else>
+      <navigator url='{{isLogin?"/pages/course/pay/pay?id="+id+"&price="+course.price:"/pages/my/login/login"}}'>
+        <view class='but'>学习</view>
+      </navigator>
+    </view>
+  </view>
+  <view class='right' wx:else>
+    <view wx:if="{{course.isBuy == 1 || course.is_buy == 1 || course.price == 0}}">
+      <text class='Money'>免费</text>
+      <view wx:if="{{firstChildId}}">
+        <navigator url='/pages/course/watch/watch?vid={{id}}&id={{firstChildId}}'>
+          <view class='but'>学习</view>
+        </navigator>
+      </view>
+      <view wx:else>
+        <view class='but' bindtap='noCourseHour'>学习</view>
+      </view>
+    </view>
+    <view wx:else>
+      <text class='Money'>￥{{course.price}}</text>
+      <navigator url='{{isLogin?"/pages/course/pay/pay?id="+id+"&price="+course.price:"/pages/my/login/login"}}'>
+        <view class='but'>购买</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class='newlist'>
+  <view data-on="1" class="{{_on==1?'on':''}}" bindtap='navclick'>简介</view>
+  <view data-on="2" class="{{_on==2?'on':''}}" bindtap='navclick'>目录</view>
+  <view data-on="3" class="{{_on==3?'on':''}}" bindtap='navclick'>点评（{{course.reviewCount}}）</view>
+</view>
+<view class=''>
+  <!-- 简介 -->
+  <view  data-on="1" class="content {{_on==1?'show':'hide'}}">
+    <template is="wxParse" data="{{wxParseData:video_intro.nodes}}"/>
+  </view>
+  <!-- 目录 -->
+  <view data-on="2" class="{{_on==2?'show':'hide'}}" style='font-size:24rpx;'>
+    <view wx:for="{{section}}" wx:key="id" class='mulucont'>
+      <view class='chapter' data-show="{{index}}" data-hide="{{item.ishide}}" bindtap='showClassHour'>{{item.title}}
+        <view  data-show="{{index}}" data-hide="{{item.ishide}}" class='Open'>
+          <image data-show="{{index}}" data-hide="{{item.ishide}}" class='openimg' src="/images/icon/{{item.ishide?'bottom':'top'}}.png"></image>
+        </view>
+      </view>
+      <view hidden="{{item.ishide}}" class="{{_show==index?'show':'hide'}}">
+        <view wx:for="{{item.child}}" wx:for-item="child" wx:key="id" class='Classhour'>
+          <view class='chaptername'><view wx:if="{{child.is_order}}"><image class='lockimg' src="/images/icon/lock_{{child.lock?'off':'on'}}.png"></image></view>{{child.title}}</view>
+          <view class='maxcondetn' wx:if="{{ios}}">
+            <view class='priAndBut' wx:if="{{child.is_free || child.is_buy || course.is_buy || course.isBuy || course.price == 0}}">
+              <text class='Price'>( {{child.v_type}} )</text>
+              <view wx:if="{{child.video_type == 6}}">
+                <view class='but butNot'>学习</view>
+              </view>
+              <view wx:else>
+                <view wx:if="{{child.is_order}}">
+                  <navigator url='{{child.lock?"/pages/course/watch/watch?vid="+id+"&id="+child.id:""}}'><view class='but'>学习</view></navigator>
+                </view>
+                <view wx:else>
+                  <navigator url='{{"/pages/course/watch/watch?vid="+id+"&id="+child.id}}'><view class='but'>学习</view></navigator>
+                </view>
+              </view>
+            </view>
+            <view class='priAndBut' wx:else>
+              <text class='Price'>( {{child.v_type}} )</text>
+              <navigator url='{{isLogin?"/pages/course/pay/pay?id="+id+"&sid="+child.id+"&price="+child.course_hour_price:"/pages/my/login/login"}}'><view class='but'>学习</view></navigator>
+            </view>
+          </view>
+          <view class='maxcondetn' wx:else>
+            <view class='priAndBut' wx:if="{{child.is_free || child.is_buy || course.is_buy || course.isBuy || course.price == 0}}">
+              <text class='Price'>( {{child.v_type}} )</text>
+              <view wx:if="{{child.video_type == 6}}">
+                <view class='but butNot'>学习</view>
+              </view>
+              <view wx:else>
+                <view wx:if="{{child.is_order}}">
+                  <navigator url='{{child.lock?"/pages/course/watch/watch?vid="+id+"&id="+child.id:""}}'><view class='but'>学习</view></navigator>
+                </view>
+                <view wx:else>
+                  <navigator url='{{"/pages/course/watch/watch?vid="+id+"&id="+child.id}}'><view class='but'>学习</view></navigator>
+                </view>
+              </view>
+            </view>
+            <view class='priAndBut' wx:else>
+              <text class='Price'>¥{{child.course_hour_price}} ( {{child.v_type}} )</text>
+              <navigator url='{{isLogin?"/pages/course/pay/pay?id="+id+"&sid="+child.id+"&price="+child.course_hour_price:"/pages/my/login/login"}}'><view class='but'>购买</view></navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 点评 -->
+  <view data-on="3" class="{{_on==3?'show':'hide'}}">
+    <view class='content'>
+      <!-- <view class='score'>评分（{{course.reviewCount}}）人</view> -->
+      <view class='xin'>{{course.video_score_float}}
+        <view wx:for="{{course.video_score_int}}" wx:key="s">
+          <image class='scoreimg' src='/images/icon/score_on.png'></image></view>
+        <view wx:if="{{course.video_score_int != course.video_score_float}}">
+          <image class='scoreimg' src='/images/icon/score_half.png'></image></view>
+        <view wx:if="{{course.video_score_int != course.video_score}}" wx:for="{{5 - course.video_score}}" wx:key="s">
+          <image class='scoreimg' src='/images/icon/score.png'></image></view>
+      </view>
+      <view class='Plist' wx:for="{{review}}" wx:key="item">
+        <view class='Pitem'>
+          <image src='{{item.userface}}'></image>
+          <view class='PitemTop'><text>{{item.username}}</text>   <text class='time'>{{item.strtime}}</text></view>
+          <view class='PitemBottom'>{{item.review_description}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,94 @@
+<!--pages/my/myCenter/myCenter.wxml-->
+<view class="centerhead">
+  <view>
+    <!-- <view>
+      <image class='headimg' -bindtap='modifyHeadImg' src='{{userInfo.userface}}'></image>
+    </view>
+    <view class='centerName'>{{userInfo.uname}}<text></text></view> -->
+    <!-- <view class='centerInfo'>简介: 
+      <navigator url='/pages/my/modifyData/modifyData'>
+        <text>{{userInfo.intro}}</text>
+        <image class='iconuse' src='/images/icon/modify.png'></image>
+      </navigator>
+    </view> -->
+    <image class='set' bindtap='setTable' src='/images/icon/set.png'></image>
+    <view class='centerInfo'>
+      <navigator url="{{needLogin}}">
+        <image class='headimg' -bindtap='modifyHeadImg' src='{{userInfo.userface}}'></image>
+      </navigator>
+      <view class='infoDetails'>
+        <view>{{userInfo.uname}}</view>
+        <view class='introtextover'>
+          简介：{{userInfo.intro?userInfo.intro:"想要的东西都很贵，想去的地方都很远"}}
+          <!-- <image class='iconuse' src='/images/icon/modify.png'></image> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='centerNav'>
+  <view data-on="1" bindtap='navclick' class="navlist {{_on==1?'on':''}}">
+    <view data-on="1">
+      <image data-on="1" src="{{_on==1?'/images/icon/order_on.png':'/images/icon/order.png'}}" class='myorderimg'></image>
+      <view data-on="1">我的课程</view>
+    </view>
+  </view>
+  <view data-on="2" bindtap='navclick' class="navlist {{_on==2?'on':''}}">
+    <view data-on="2">
+      <image data-on="2" src="{{_on==2?'/images/icon/Collection_on.png':'/images/icon/Collection.png'}}" class='myCollection'></image>
+      <view data-on="2">我的收藏</view>
+    </view>
+  </view>
+</view>
+<!-- 我的课程 -->
+<view class="navlist {{_on==1?'show':'hide'}}">
+  <view wx:for="{{myCourse}}" wx:key="item">
+    <view class='orderitem'>
+      <navigator url='/pages/course/view/view?id={{item.id}}'>
+        <view class='order_info'>
+          <image class='order_img' src="{{item.cover?item.cover:'/images/home/loading_image.png'}}"></image>
+          <view class='order_right'>
+            <view class='nameAndPrice'>
+              <text class='order_name'>{{item.video_title}}</text>
+              <text wx:if="{{ios == false}}" class='order_price'>¥{{item.course_hour_price?item.course_hour_price:item.price}}</text>
+            </view>
+            <view wx:if="{{item.course_hour_name}}" class='NAPH'>
+              <text class='order_name'>{{item.course_hour_name}}</text>
+            </view>
+            <view class='order_bottom'>
+              <view class='effectiveTime'>{{item.time_limit}}</view>
+              <view class='but_list'>
+                <!-- <view class='but_click'><navigator url='/pages/course/refund/refund?id={{item.id}}&uid={{item.uid}}'>申请退款</navigator></view> -->
+                <!-- <view bindtap='delOrder' class='but_click'>删除订单</view> -->
+                <view>{{item.video_order_count}}人在学.共{{item.section_count}}节</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 我的收藏 -->
+<view class="navlist {{_on==2?'show':'hide'}}">
+  <view wx:for="{{myCollection}}" wx:key="item">
+    <navigator url='/pages/course/view/view?id={{item.id}}'>
+      <view class='ColItem'>
+        <image src='{{item.imageurl?item.imageurl:"/images/home/loading_image.png"}}' class='ColItem_img'></image>
+        <view class='ColItem_right'>
+          <view class='ColItem_name'>
+            <view> {{item.video_title}}</view>
+          <text wx:if="{{ios == false}}" class='order_price'>¥{{item.t_price}}</text>
+          </view>
+          <view class='ColItem_time_col'>
+            <!-- <view class='ColItem_time'>时间：{{item.ctime}}</view> -->
+            <!-- <view bindtap='isScore' data-isScore="{{score}}" class='ColItem_col'>
+            <image data-isScore="{{score}}" class='coll_on' src='{{score? "/images/icon/coll_on.png" : "/images/icon/score.png"}}'></image> 取消收藏
+          </view> -->
+            <view>{{item.video_order_count}}人在学.共{{item.section_count}}节</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

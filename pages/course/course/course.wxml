@@ -1,0 +1,79 @@
+<!--pages/course/course.wxml-->
+<view   class="{{classShow==1?' ':'over-yHide'}}">
+  <view class='headernav'>
+    <navigator url=''></navigator>
+    课程
+    <view  bindtap='classShow' class='right'>
+      <image  class='classUse' src="/images/icon/class.png"></image>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='title'>课程</view>
+  </view>
+  <!-- 分类 位置不可移动-->
+  <view hidden='{{classShow}}' id='mask'></view>
+  <view hidden='{{classShow}}' class='class_use'>
+    <view class='class_title class_title_one'>排序方式</view>
+    <view class='sortOrder'>
+      <view data-type='best' bindtap='clickClass' class='but {{sortOrder=="best"? "but_on" : ""}}'>精选</view>
+      <view data-type='scoredesc' bindtap='clickClass' class='but {{sortOrder=="scoredesc"? "but_on" : ""}}'>评分</view>
+      <view wx:if="{{ios == false}}" data-type='t_price' bindtap='clickClass' class='but {{sortOrder=="t_price"?"but_on":""}}'>
+        价格 
+        <image class='icon' data-type='t_price' src='/images/icon/ArrowTop.png'></image>
+      </view>
+      <view wx:if="{{ios == false}}" data-type='t_price_down' bindtap='clickClass' class='but {{sortOrder=="t_price_down"?"but_on":""}}'>
+        价格
+        <image class='icon' data-type='t_price_down' src='/images/icon/ArrowBottom.png'></image>
+      </view>
+    </view>
+    <!-- <view  class='class_title class_title_two'>分类</view>
+    <view class='classALL'>
+        <view class='but'>不限</view>
+        <view class='but'>出国留学32131313</view>
+        <view class='but'>公务员13</view>
+        <view class='but'>管理培训2311</view>
+        <view class='but'>古诗词32131</view>
+        <view class='but'>出国留学3213</view>
+        <view class='but'>公务员312</view>
+    </view>
+    <view class='class_title class_title_three'>会员</view>
+    <view class='Member'>
+        <view class='but'>不限</view>
+        <view class='but'>青铜</view>
+        <view class='but'>白银</view>
+        <view class='but'>黄金</view>
+        <view class='but'>铂金</view>    
+        <view class='but'>钻石</view>
+    </view> -->
+    <view class='class_but'>
+      <view>
+        <view bindtap='submit' class='but'>确定</view>
+        <view bindtap='classShow' data-cancel="1" class='but'>取消</view>
+      </view>   
+    </view>
+  </view>
+  <view class='itemList'>  
+      <view wx:for="{{CourseList}}" wx:key="item" class='item'>
+        <navigator url='/pages/course/view/view?id={{item.id}}'>
+          <image src='{{item.imageurl?item.imageurl:"/images/home/loading_image.png"}}'></image>
+          <view class='textinfo'>
+              <view wx:if="{{ios}}">
+                <text class='itemName ios'>{{item.video_title}}</text>
+              </view>
+              <view wx:else>
+                <text class='itemName'>{{item.video_title}}</text>
+                <text class='itemMoney' wx:if="{{item.is_charge == 1 || item.t_price == 0}}">免费</text>
+                <text class='itemMoney' wx:else>￥{{item.t_price}}</text>
+              </view>
+              <view>
+                <text class='itemBrowse'>{{item.view_nums}} 人浏览</text>
+                <text class='itemDo'>{{item.video_order_count}} 人在学习</text>
+              </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="onlaod">
+        {{onload}}
+      </view>
+  </view>
+</view>

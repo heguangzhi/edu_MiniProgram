@@ -1,0 +1,210 @@
+/* pages/course/course.wxss */
+.headernav{
+  width: 96%;
+  height: 80rpx;
+  text-align: center;
+  overflow: hidden;
+  line-height: 80rpx;
+  padding: 0 2%;
+  background-color: #3678D4;
+  color: white;
+  font-size:34rpx;
+  position: relative;
+  z-index: 3
+}
+.headernav navigator{
+  float: left;
+}
+.headernav .right{
+  float: right ;
+}
+.content{
+  padding: 0 31rpx;
+  overflow: hidden
+}
+.content .title{
+  font-size: 16px;
+  line-height: 16px;
+  margin: 19rpx 0 0 0;
+  border-left: 6rpx solid #3678D4;
+  padding-left: 10rpx;
+ 
+
+}
+.item image, .item textinfo{
+  float: left;
+ 
+}
+.item{
+  padding: 22rpx 31rpx 19rpx 31rpx;
+  border-bottom: 1px solid #D2D2D2;
+}
+.item image{
+  width: 276rpx;
+  height: 153rpx;
+  padding-right: 23rpx;
+}
+.itemName{
+  font-size: 14px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(44,44,44,1);
+  width: 250rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ios{
+  width: 400rpx;
+}
+.itemMoney{
+  font-size:12px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(230,83,83,1);
+}
+.itemBrowse{
+  font-size:12px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(155,151,151,1);
+}
+.itemDo{
+  font-size:12px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(155,151,151,1);
+}
+.textinfo{
+  height: 153rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.textinfo view:first-child{
+  padding-top: 7rpx;
+  
+}
+.textinfo view{
+  display: flex;
+  justify-content: space-between;
+  line-height: 14px;
+}
+.onlaod{
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+.classUse{
+  width:36rpx;
+  height:32rpx;
+}
+
+
+/* 遮罩层 */
+#mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.class_use{
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  top: 80rpx;
+  width: 100%;
+}
+.class_use>view{
+  padding: 0 34rpx;
+}
+.class_use .class_title{
+  font-size:26rpx;
+  color:rgba(11,11,11,1);
+   height: 82rpx;
+  line-height: 82rpx;
+}
+
+.but{
+  display: inline-block;
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(127,127,127,1);
+  background-color: #E7E7E7;
+  height: 51rpx;
+  line-height: 51rpx;
+  min-width: 140rpx;
+  padding: 0;
+  margin-bottom: 12rpx;
+  text-align: center;
+}
+.icon{
+  width: 19rpx;
+  height: 23rpx;
+}
+.sortOrder{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.sortOrder .but{
+  width: 140rpx;
+  height: 51rpx;
+  padding: 0;
+  text-align: center;
+  line-height: 51rpx;
+}
+.class_use .classALL{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 15rpx;
+}
+.classALL .but{
+  margin:0 19rpx;
+  padding: 0 10rpx;
+  margin-bottom: 12rpx;
+}
+.classALL .but:first-child{
+  padding: 0;
+}
+.class_use .Member{
+  padding: 0 15rpx;
+}
+.Member .but{
+   margin:0 19rpx;
+  margin-bottom: 12rpx;
+} 
+.class_title_one{
+  
+}
+.class_title_two{
+  margin-top: -12rpx;
+}
+.class_title_three{
+  margin-top: -12rpx;
+}
+.class_but{
+  display: flex;
+  justify-content: center;
+}
+.class_but .but:first-child{
+  margin-right: 71rpx;
+  color: #FFFFFF;
+  background-color: #3678D4;
+}
+.class_but {
+  margin-top: 25rpx;
+}
+.over-yHide{
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.but_on{
+  background-color: #3678D4;
+  color: white
+}

@@ -1,0 +1,7 @@
+/* pages/single/payAgr/payAgr.wxss */
+@import "../../../libs/wxParse/wxParse.wxss";
+#content{
+  padding: 2%;
+  white-space: normal;
+  word-wrap: break-word;
+}

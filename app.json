@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/my/myCenter/myCenter",
+    "pages/course/pay/pay",
+    "pages/course/watch/watch",
+    "pages/my/bind/bind",
+    "pages/my/reg/reg",
+    "pages/my/login/login",
+    "pages/course/course/course",
+    "pages/my/modifyData/modifyData",
+    "pages/course/refund/refund",
+    "pages/course/view/view",
+    "pages/logs/logs",
+    "pages/single/payAgr/payAgr"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Eduline",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#00BED4",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/icon/home.png",
+        "selectedIconPath": "/images/icon/home_on.png"
+      },
+      {
+        "pagePath": "pages/course/course/course",
+        "text": "课程",
+        "iconPath": "/images/icon/course.png",
+        "selectedIconPath": "/images/icon/course_on.png"
+      },
+      {
+        "pagePath": "pages/my/myCenter/myCenter",
+        "text": "我的",
+        "iconPath": "/images/icon/my.png",
+        "selectedIconPath": "/images/icon/my_on.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

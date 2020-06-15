@@ -1,0 +1,6 @@
+<!--pages/single/payAgr/payAgr.wxml-->
+<import src="/libs/wxParse/wxParse.wxml"/>
+
+<view id='content'>
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>

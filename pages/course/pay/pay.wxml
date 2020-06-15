@@ -1,0 +1,54 @@
+<!--pages/course/pay/pay.wxml-->
+<view wx:if="{{ios == false}}">
+  <view class='pay_top'>
+  <view class='pay_text'>确认订单</view>
+  <view class='payitem'>
+    <image class='payitem_img' src='{{course.cover?course.cover:"/images/home/loading_image.png"}}'></image>
+    <view class='payitem_right'>
+      <view class='title_price'>
+        <text>{{course.video_title}}</text>
+        <text class='pay_price'>￥{{sid?courseHour.course_hour_price:course.price}}</text>
+      </view>
+      <view class='title_price'><text>{{sid?courseHour.title:""}}</text></view>
+      <view class='purchase'>{{course.video_order_count_mark}}人已购买</view>
+    </view>
+  </view>
+  <view class='pay_text'>支付方式</view>
+
+  <view class='payclass'>
+    <radio-group>
+      <view class='payclass_yu'>
+        <view>
+          <view></view>
+          <view class='text'>余额支付</view>
+        </view>
+        <view><radio checked='{{ios?"":"checked"}}' data-paytype="lcnpay" bindtap='checkRadio'></radio></view>
+      </view>
+      <view class='payclass_wx'>
+        <view>
+          <view></view>
+          <view class='text'>微信支付</view>
+        </view>
+        <view><radio checked='{{ios?"checked":""}}' data-paytype="wxpay" bindtap='checkRadio'></radio></view>
+      </view>
+    </radio-group>
+    </view>
+      <view class='balance'>
+        <view><text>我的余额</text> <text>￥{{balance}}</text></view>
+        <!-- <view><text>实付金额</text> <text class='red'>￥{{course.price}}</text></view> -->
+        <!-- <view><text>折扣优惠</text> <text class='red'>-¥0.0</text></view> -->
+      </view>
+    <view class='Agree'>
+      <checkbox-group  bindchange="checkbox"><checkbox value="checked"></checkbox></checkbox-group>
+      <view>我已阅读并同意
+        <navigator url='/pages/single/payAgr/payAgr'>
+          <text> 《{{site_title}}购买条款》</text>
+        </navigator>
+      </view>
+    </view> 
+    <view class='footerbottom'>
+      <view class='_left'> 合计:  ￥<text>{{sid?courseHour.course_hour_price:course.price}}</text></view>
+      <view class='_right' bindtap='submit'>立即购买</view>
+    </view>
+  </view>
+</view>

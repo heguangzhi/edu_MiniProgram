@@ -1,0 +1,18 @@
+<!--pages/my/reg/reg.wxml-->
+<view class='banner'>
+  <image src='/images/reg/banner.png'></image>
+</view>
+<view class='form'>
+  <view>
+    <view class='view_form username'>
+      <view>用户名</view>
+      <input placeholder='手机号/用户名/邮箱' bindinput='watchUname'></input>
+    </view>
+    <view class='view_form password'>
+      <view>密码</view>
+      <input type='password' placeholder='请输入登录密码' bindinput='watchPwd'></input>
+    </view>
+    <button class='butFir' bindtap="bind">绑定</button>
+  </view>
+  <view id='navTobind'><navigator hover-class="none" url='/pages/my/reg/reg'>注册新账号</navigator></view>
+</view>

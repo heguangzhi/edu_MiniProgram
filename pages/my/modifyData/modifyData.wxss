@@ -1,0 +1,46 @@
+/* pages/my/modifyData/modifyData.wxss */
+.modifyData>view{
+  padding: 0 41rpx;
+  line-height: 89rpx;
+  font-size:26rpx;
+  display: flex;
+  border-bottom: 1px solid #D2D2D2;
+  align-items: center;
+}
+.modifyData>view>view:first-child{
+  color: #0B0B0B;
+  margin-right: 79rpx;
+}
+.myHeadImg{
+  justify-content: space-between;
+}
+.icon{
+  width: 14rpx;
+  height: 24rpx;
+}
+.modifyData>view>view:last-child{
+  color: #A7A8A8;
+  width: 530rpx;
+}
+radio-group radio{
+  transform: scale(0.8)
+}
+radio-group label:last-child radio{
+  margin-left: 104rpx;
+}
+.modifyData .but{
+  border-bottom: none;
+  padding: 0;
+  margin: 0 41rpx;
+  margin-top: 32rpx;
+  background-color: #3678D4;
+  color: white;
+  font-size: 31rpx;
+  border-radius:6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex_groud{
+  flex-grow: 1
+}

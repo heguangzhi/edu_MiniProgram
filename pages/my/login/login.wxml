@@ -1,0 +1,28 @@
+<view class="wechat">
+  <view class='loginCent'>
+    <image class='banner' src='/images/login/banner.png'></image>
+    <view class='loginBox'>
+      <image class='login' src='/images/login/logo.png'></image>
+      <view class='logoInfo'>因为专注 所以专业</view>
+    </view>
+
+    <view class="login">
+      <view class='login-c'>
+        <view class="login-child login-text">账号</view>
+        <input class='login-child login-input' bindinput='watchUname' placeholder="手机号/用户名/邮箱" type="text"></input>
+      </view>
+      <view class='login-c'>
+        <view class="login-child login-text">密码</view>
+        <input class='login-child login-input' bindinput='watchUpwd' placeholder="请输入登录密码" type="password"></input>
+      </view>
+      <button class='login-btn' bindtap="login" >登录</button>
+      <view class='login-o'>
+      </view>
+    </view>
+
+    <button class="third-btn" bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo">
+      <image src='/images/login/loginIcon.png'></image>
+      <text>授权登录</text>
+    </button>
+  </view>
+</view>

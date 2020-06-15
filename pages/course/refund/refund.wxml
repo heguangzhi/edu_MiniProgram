@@ -1,0 +1,52 @@
+<!--pages/course/refund/refund.wxml-->
+<view class='refund_item refund_padding'>
+  <view class='refund_text'>确认订单</view>
+  <view class='refund_itemdet'>
+    <image class='refund_item_img' src='{{refund.cover}}'></image>
+    <view class='refund_item_right'>
+      <view class='refund_item_top'>
+        <text>{{refund.video_title}}</text>
+        <text class='refund_item_price'>￥{{refund.t_price}}</text>
+      </view>
+      <view class='refund_item_bottom'>{{refund.video_order_count_mark}}人已购买</view>
+    </view>
+  </view>
+</view>
+<view class=' refundReason'>
+  <view bindtap='select' class='refund_padding'>
+    <text>退款原因</text>
+    <view class='right'>
+      <text>{{select}}</text>
+      <image src='/images/icon/more.png' class='icon'></image>
+    </view>
+  </view>
+  <view class='refund_padding'>
+    <text>退款渠道</text>
+    <view class='right'>原支付渠道返回（  <text>微信</text>支付）</view>
+  </view>
+</view>
+<view class='tuikuan'>  
+  <view class='refund_padding'><text>退款金额：</text> <text class='color'>￥12</text></view>
+  <view class='refund_padding'><text>退款说明：</text>  <input placeholder="选填"></input></view>
+</view> 
+<view class='refund_padding'>
+  <view class='voucher'>上传凭证</view>
+  <view class='imgbox'>
+    <view class='voucherbox'>
+      <view bindtap='upload'>
+        <image src='/images/icon/camera.png' class='voucherbox_img'></image> 
+        <view class='voucherbox_text'>上传凭证</view>
+      </view> 
+    </view>
+    <view wx:for="{{images}}" wx:key="{{item}}">
+      <image  class='images' src='{{item}}'></image>
+    </view>
+  </view>
+  <view class='Agree'>
+    <checkbox></checkbox>  <view>我已阅读并同意   <text>《{{site_title}}购买条款》</text></view>
+  </view> 
+</view>
+<view class='but_list refund_padding'>
+  <view>取消</view>
+  <view>确认</view>
+</view>
